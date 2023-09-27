@@ -4,3 +4,10 @@
 #
 # 5AHET
 
+FROM ubuntu:22.04
+
+COPY ./README.md .
+RUN  apt-get -y update
+RUN  apt-get -y install apache2
+
+CMD apache2 -D FOREGROUND
