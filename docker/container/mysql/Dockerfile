@@ -4,7 +4,7 @@
 FROM mysql/mysql-server:latest
 
 LABEL maintainer = "werner.damboeck@letto.at"
-LABEL description = "MySQL-server for LeTTo-server"
+LABEL description = "MySQL-server "
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
