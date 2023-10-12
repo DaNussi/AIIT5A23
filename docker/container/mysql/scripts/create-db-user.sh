@@ -8,7 +8,7 @@
 if [ -n "$1" -a -n "$2" ] ; then
   echo create database $1 with user $1
   mysql -uroot -p$MYSQL_ROOT_PASSWORD -e"create database if not exists $1;" 2>/dev/null
-  mysql -uroot -p$MYSQL_ROOT_PASSWORD -e"CREATE USER if not exists '$1'@'%' IDENTIFIED WITH mysql_native_password BY '$2';" 2>/dev/null
+  mysql -uroot -p$MYSQL_ROOT_PASSWORD -e"CREATE USER if not exists '$1'@'%' IDENTIFIED WITH caching_sha2_password BY '$2';" 2>/dev/null
   mysql -uroot -p$MYSQL_ROOT_PASSWORD -e"GRANT ALL PRIVILEGES ON $1 . * TO '$1'@'%';" 2>/dev/null
   mysql -uroot -p$MYSQL_ROOT_PASSWORD -e"flush privileges;" 2>/dev/null
 else
