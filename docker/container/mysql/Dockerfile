@@ -20,7 +20,9 @@ RUN  microdnf install dos2unix && \
 
 ADD ./scripts/* ./scripts/
 RUN chmod 755 ./scripts/*.sh && \
-    # dos2unix ./scripts/*.sh && \
+    dos2unix ./scripts/*.sh && \
+    echo >>/etc/my.cnf && \
+    echo "[mysqld]" >>/etc/my.cnf && \
     echo "sql_mode=\"STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION\"" >>/etc/my.cnf  && \
     echo "default-time-zone='SYSTEM'" >>/etc/my.cnf && \
     echo "max_connections=500" >>/etc/my.cnf
