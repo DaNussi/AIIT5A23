@@ -12,6 +12,6 @@ services:
         limits:
           memory: "100m"
     volumes:
-      - C:\docker\htl\sj23-24\webserver\html:/var/www/html
+      - ${HTMLSITE}:/var/www/html
     hostname: ${NAME:-webserver}
     container_name: ${NAME:-webserver}
