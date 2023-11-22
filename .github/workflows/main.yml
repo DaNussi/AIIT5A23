@@ -22,6 +22,6 @@ jobs:
     - name: Move dir
       run: cd docker/container/phpmyadmin && ls -a -l
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag registry.nussi.net/phpmyadmin:latest
+      run: docker build -t registry.nussi.net/phpmyadmin:latest .
     - name: Push the Docker image latest
       run: docker push registry.nussi.net/phpmyadmin:latest
