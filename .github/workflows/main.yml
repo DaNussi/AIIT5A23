@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Move dir
-      run: cd docker/container/phpmyadmin
+      run: cd docker/container/phpmyadmin && ls -a -l
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag registry.nussi.net/phpmyadmin:latest
     - name: Push the Docker image latest
