@@ -5,6 +5,6 @@ docker network create nw-htl
 
 docker compose up -d
 
-rem Hier sollte ein Delay ausgeführt werden
+timeout /t 20
 
-docker exec -i mysql-htl-23-24 initialize
+docker exec -i mysql-htl-23-24 /bin/bash ./scripts/init-db.sh
