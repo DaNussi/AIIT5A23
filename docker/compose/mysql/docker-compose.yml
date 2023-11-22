@@ -11,7 +11,7 @@ volumes:
 
 services:
   htl-mysql-server:
-    image: my-mysql-server
+    image: registry.nussi.net/mysql
     environment:
       - TZ=${TIMEZONE:-Europe/Berlin}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
@@ -38,7 +38,7 @@ services:
     restart: always
 
   htl-phpmyadmin:
-    image: my-phpmyadmin
+    image: registry.nussi.net/phpmyadmin
     networks:
       - nw-htl
     environment:
